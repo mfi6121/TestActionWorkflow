@@ -1,0 +1,17 @@
+name: Aufgabe 02
+on:
+  push:
+    braches:
+      - 'main'
+jobs:
+  aufgabe-02:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v3
+    - name: calculate
+      run: expr 1 + 1 > Result.txt
+    - uses: actions.upload-artifact@v3.1.0
+    with:
+      name: result
+      path: Result.txt
+    
